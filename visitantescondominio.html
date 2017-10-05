@@ -1,121 +1,139 @@
 <html>
-    <head>
-	   <title>  VISITANTES DE CONDOMINIO </title>	
-   <link href="https://fonts.googleapis.com/css?family=Bowlby+One" rel="stylesheet">
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
-
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid blue;
-    text-align: center;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
+       <head>
+	       <title>  VISITANTES DE CONDOMINIO </title>	
+                 <link href="https://fonts.googleapis.com/css?family=Bowlby+One" rel="stylesheet">
+                 <meta charset="utf-8">
+                 <meta name="viewport" content="width=device-width, initial-scale=1">
+                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
+           <style>
+                table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                      }
 
+                td, th{
+                border: 1px solid blue;
+                text-align: center;
+                padding: 8px;
+                      }
 
-   </head>
+                tr:nth-child(even) {
+                background-color: #dddddd;
+                                   }
+            </style>
+
+            <style>
+			    div.position{
+			    position: relative;                                             
+			    align: right;
+			    height:90px;											
+			    position: absolute; 
+			    right: 0px; 
+			    bottom: -50;											
+					}						
+            </style>
+
+        </head>
 	
-   
+
 
 	
-	<body background="http://eskipaper.com/images/black-car-pictures-3.jpg">
+	    <body background="http://eskipaper.com/images/black-car-pictures-3.jpg">
 		
 		<br>
+		
 	    <h1 align= "center" style="font-family: 'Bowlby One', cursive; font-size:300%; color: blue"> CONTROLE DE VISITANTES </h1>
+		
 		<br>
 		<br>
 		<br>
 	
 		
-	 <form class="form-inline" > 
+	    <form  name="cadastrodevisitantes" action="enviar.php" class="form-inline" method="post" onsubmit="return validateForm()">
 	
-          <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color:blue"> NOME </font> <input type="nome" class= "form-control" name="" size="95%">  
-	      <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> CPF  </font> <input type="nome" class= "form-control" name="" size="36%"> 
-		  <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> TELEFONE </font> <input type="nome" class= "form-control"  name="" size="34%">  
-		  <br>
-		  <br>
-	      <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> APARTAMENTO </font> <input type="nome" class= "form-control"  name="" size="80%">  
-	      <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> BLOCO </font> <input type="nome" class= "form-control" size="31%">
-		  <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> NUMERO </font> <input type="nome" class= "form-control"  name="" size="35%">
-	</form>	
+            <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color:blue"> NOME </font><input type="text" class= "form-control" name="nome" size="70%" required="" >
+	        <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> CPF  </font><input type="text" class= "form-control" name="cpf" size="50%"  required="">
+		    <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> TELEFONE </font><input type="text" class= "form-control"  name="telefone" size="10%" required="" >
+		
+		<br>
+		<br>
+		
+	        <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> E-MAIL </font><input type="text" class= "form-control"  name="email" size="68%" required="" >
+	        <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> APARTAMENTO / BLOCO </font><input type="text" class= "form-control" name="apartamentobloco" size="17%" required="" >
+		    <font style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> TORRE </font><input type="text" class= "form-control"  name="torre" size="16%" required="" >
+		
+		<br>
+		<br>
+		
+		    <div class="position">
+		    <input type="submit" class="btn btn-success active" >
+            <input type="submit" class="btn btn-danger active" value="Cancelar" >
+            </div>
+		
+	    </form>	
 	
-	<br>
-	<br>
-	<br>
+	    <br>
+	    <br>
+	    <br>
 	
-   <table>
-	 <tr align="center">
-	  <th style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> VEÍCULO </th> 
-	  <th style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> PLACA </th>  
-	  <th style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> MARCA </th>
-	  <th style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> MODELO </th>
-     </tr>
-	 <tr align="center">
-      <td> <input type="nome" class= "form-control"  name="" size="9%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-     </tr>
-     <tr>
-      <td> <input type="nome" class= "form-control"  name="" size="9%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-    </tr>
-    <tr>
-      <td> <input type="nome" class= "form-control"  name="" size="9%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-    </tr>
-    <tr>
-      <td> <input type="nome" class= "form-control"  name="" size="9%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-	  </tr>
-     <tr>
-      <td> <input type="nome" class= "form-control"  name="" size="9%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-     </tr>
-     <tr>
-      <td> <input type="nome" class= "form-control"  name="" size="9%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-      <td> <input type="nome" class= "form-control"  name="" size="3%"> </td>
-     </tr>
-   </table>
-   
-   <br>
-   <br>
-   <br>
- 	
-   <div align="right" >
-	      <button type="button" class="btn btn-success active">SALVAR</button>
-          <button type="button" class="btn btn-primary active">IMPRIMIR</button>
-          <button type="button" class="btn btn-warning active">CANCELAR</button>
-	   	
-   </div>
-	 
-	</body>
+        <table>
+	        <tr align="center">
+	        <th style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> VEÍCULO </th>
+	        <th style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> PLACA </th>
+	        <th style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> MARCA </th>
+	        <th style=" font-family: 'Bowlby One', cursive; font-size: 150%; color: blue"> MODELO </th>
+            </tr>
+	        <tr align="center">
+            <td><input type="nome" class= "form-control"  name="" size="9%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            </tr>
+            <tr>
+            <td><input type="nome" class= "form-control"  name="" size="9%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            </tr>
+            <tr>
+            <td><input type="nome" class= "form-control"  name="" size="9%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            </tr>
+            <tr>
+            <td><input type="nome" class= "form-control"  name="" size="9%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+	        </tr>
+            <tr>
+            <td><input type="nome" class= "form-control"  name="" size="9%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            </tr>
+            <tr>
+            <td><input type="nome" class= "form-control"  name="" size="9%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            <td><input type="nome" class= "form-control"  name="" size="3%"></td>
+            </tr>
+        </table>
+
+        <br>
+        <br>
+        <br>
+
+
+
 	
+	    </body>
+	
+
 </html>
